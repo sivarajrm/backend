@@ -89,7 +89,9 @@ def admin_overview(x_user_email: str = Header(...), db: Session = Depends(get_db
         "total_ai_reports": total_reports,
     }
 
-
+@app.get("/")
+def read_root():
+    return {"status": "Active", "project": "Personalized Health System API"}
 
 #-------------------ADMIN ONLY DELETE-----------------------------------
 
