@@ -70,13 +70,12 @@ def generate_health_advice(data: dict) -> dict:
           "fitness": "- item 1\\n- item 2",
           "goals": "- goal 1\\n- goal 2"
         }}
-
+        
         No markdown, no extra text.
         """
 
         model = genai.GenerativeModel("gemini-2.5-flash")
         response = model.generate_content(prompt)
-
         raw_text = (response.text or "").strip()
         cleaned = raw_text.replace("```json", "").replace("```", "").strip()
 

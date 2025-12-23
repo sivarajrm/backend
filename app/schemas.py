@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 
 class HealthData(BaseModel):
-    user_id: str
     age: float
     gender: str
     height: float

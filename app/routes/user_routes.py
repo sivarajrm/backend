@@ -27,3 +27,4 @@ def check_or_create_user(user_data: dict, db: Session = Depends(get_db)):
     db.refresh(new_user)
 
     return {"exists": False}
+
